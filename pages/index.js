@@ -4,7 +4,6 @@ import { Button } from "react-bootstrap"
 export default function index() {
   return (
     <>
-    <div className="col-sm-12 text-center">
       <img src="/vercel.svg"></img>
       <h2>HELLO CRUD SEQUELIZE</h2>
       <Button variant="primary">Primary</Button>
@@ -16,7 +15,6 @@ export default function index() {
       <Button variant="light">Light</Button>
       <Button variant="dark">Dark</Button> 
       <Button variant="link">Link</Button>
-    </div>
     </>
   );
 }
