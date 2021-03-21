@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function index() {
+export default function detail() {
     return (
         <div>
-            <h1>flight list</h1>
+            <h2>explore detail</h2>
         </div>
     )
 }

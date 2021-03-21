@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Navbar, Nav, NavDropdown } from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
 
 export default function NavMenu() {
   return (
@@ -13,26 +13,17 @@ export default function NavMenu() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
             <Link href="/">
-              <a class="nav-link">
-                Home
-              </a>
+              <a className="nav-link">Home</a>
             </Link>
-            <Link href="/flight">
-              <a class="nav-link">
-                Flight
-              </a>
+            <Link href="/flight/departures">
+              <a className="nav-link">Flight Departures</a>
             </Link>
-            <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
+            <Link href="/flight/arrivals">
+              <a className="nav-link">Flight Arrivals</a>
+            </Link>
+            <Link href="/explore">
+              <a className="nav-link">Explore</a>
+            </Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
