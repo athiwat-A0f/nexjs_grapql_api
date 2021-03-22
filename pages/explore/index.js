@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from "next/link";
 import style from "../../styles/Explore.module.css";
-import { Row, Card, Button, Col } from "react-bootstrap";
+import { Row, Card, Col } from "react-bootstrap";
 
 export default function index({posts}) {
     return (
@@ -10,7 +10,7 @@ export default function index({posts}) {
             <Row>
             {posts.map((post) => {
               return (
-                <Col sm={4} key={post.id}>
+                <Col sm={3} key={post.id}>
                   <Card style={{ width: "18rem" }}>
                     <Card.Img
                       variant="top"
@@ -24,7 +24,12 @@ export default function index({posts}) {
                           ? post.description.substring(0, 50) + "..."
                           : post.description}
                       </Card.Text>
-                      <Link href="explore/detail">
+                      <Link
+                        href={{
+                          pathname: "/explore/[id]",
+                          query: { id: post.id },
+                        }}
+                      >
                         <a>Read More...</a>
                       </Link>
                     </Card.Body>
@@ -38,7 +43,7 @@ export default function index({posts}) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch("http://localhost:8088/api/post");
+  const res = await fetch("http://localhost:8088/api/post/");
   const posts = await res.json();
 
   console.log(posts);

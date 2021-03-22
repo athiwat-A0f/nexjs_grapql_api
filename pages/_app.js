@@ -12,10 +12,10 @@ function MyApp({ Component, pageProps }) {
         <title>Next Sequelize</title>
       </Head>
       <NavMenu />
-      <Container fluid="md">
+      <Container fluid="fluid">
         <Component {...pageProps} />
+        <Footer />
       </Container>
-      <Footer />
     </div>
   );
 }
