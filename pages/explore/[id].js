@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import { Row, Card, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 
 export default function detail({post}) {
     return (

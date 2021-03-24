@@ -10,8 +10,8 @@ export default function index({posts}) {
             <Row>
             {posts.map((post) => {
               return (
-                <Col sm={3} key={post.id}>
-                  <Card style={{ width: "18rem" }}>
+                <Col sm={3} style={{ marginBottom: "3rem" }} key={post.id}>
+                  <Card>
                     <Card.Img
                       variant="top"
                       src={post.image}
