@@ -8,15 +8,30 @@ npm i
 #or
 yarn
 
-#development mode
+#run development mode
 npm run dev
 # or
 yarn dev
 ```
 
+Final, run the production server:
+```bash
+*you must run node_sequelize_api project before run this cli below*
+#run build compile
+npm run build
+# or
+yarn build
+
+#run production mode
+npm run start
+# or
+yarn start
+```
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-#or other port
-- yarn dev -p (your port) #ext yarn dev -p 8088
+
+#or run on other port
+- yarn dev -p (your port) #exp. yarn dev -p 8088
 
 
 ***********************************************************************************************
