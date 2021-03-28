@@ -46,6 +46,11 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@badrap/bar-of-progress@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@badrap/bar-of-progress/-/bar-of-progress-0.1.2.tgz#5d9cf85759e1f77bddcb74398530976d87bb5077"
+  integrity sha512-bCwx/HbgUfJEndzlubJF5FVQrFEcGX4HZsoCfoa+gSq37pjbJBvIyqMBLIGnb5y0ICovIrxJUxvlbmxeic0rSQ==
+
 "@hapi/accept@5.0.1":
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/@hapi/accept/-/accept-5.0.1.tgz#068553e867f0f63225a506ed74e899441af53e10"
@@ -1053,6 +1058,11 @@ normalize-path@^3.0.0, normalize-path@~3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/normalize-path/-/normalize-path-3.0.0.tgz#0dcd69ff23a1c9b11fd0978316644a0388216a65"
   integrity sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==
+
+nprogress@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/nprogress/-/nprogress-0.2.0.tgz#cb8f34c53213d895723fcbab907e9422adbcafb1"
+  integrity sha1-y480xTIT2JVyP8urkH6UIq28r7E=
 
 object-assign@^4.1.1:
   version "4.1.1"
