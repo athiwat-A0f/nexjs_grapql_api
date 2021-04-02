@@ -1,12 +1,26 @@
 import React, { useEffect } from "react";
-import { Table } from "react-bootstrap";
+import { Table, Form, Row, Col } from "react-bootstrap";
 
 export default function Departures({ flights }) {
   return (
     <>
-      <span>{console.log(flights)}</span>
+      {/* <span>{console.log(flights)}</span> */}
       <h1 style={{ color: "blue" }}>Departures</h1>
-      <h4 style={{ color: "tomato" }}>Bangkok/Suvarnabhumi Airport *</h4>
+      <hr></hr>
+      <Row>
+        <Col sm={4}>
+          <Form.Group controlId="exampleForm.SelectCustomSizeLg">
+            <Form.Label>Select Airport</Form.Label>
+            <Form.Control as="select" size="lg" custom>
+              <option value="bkk">Bangkok/Suvarnabhumi Airport</option>
+              <option value="dmk">Bangkok/Don Mueang Airport</option>
+              <option value="cnx">Chaimai/Chaimai Airport</option>
+              <option value="cei">Bangkok/Mae Fah Luang – Chiang Rai Airport</option>
+              <option value="hdy">Bangkok/Hat Yai Airport</option>
+            </Form.Control>
+          </Form.Group>
+        </Col>
+      </Row>
       <Table striped bordered hover variant="light">
         <thead>
           <tr>
@@ -33,7 +47,14 @@ export default function Departures({ flights }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
+  const D = new Date();
+  const Y = D.getFullYear();
+  const m = D.getMonth();
+  const d = D.getDate();
+  const H = D.getHours();
+  const i = "00:00";
+
   const res = await fetch("https://aot-service.staging.kdlab.dev/", {
     method: "POST",
     headers: {
@@ -117,15 +138,12 @@ export async function getServerSideProps() {
         site: "bkk",
         type: "D",
         search: "",
-        schedule_start: new Date(Date.now()),
-        // schedule_start: "2021-03-27T14:51:56.298Z",
+        schedule_start: `${Y + "-" + m + "-" + d + " " + H + ":" + i}`,
+        schedule_end: `${Y + "-" + m + "-" + d + " " + (H + 2) + ":" + i}`,
       },
     }),
   });
-  // .then((res) => res.json())
-  // .then((result) => console.log(result));
 
-  // const res = await fetch("http://localhost:8088/api/post/");
   const flights = await res.json();
 
   // console.log(JSON.stringify(flights));
